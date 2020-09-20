@@ -376,7 +376,8 @@ type enumConverter struct {
 func newEnumConverter(goType reflect.Type, fd pref.FieldDescriptor) Converter {
 	var def pref.Value
 	if fd.Cardinality() == pref.Repeated {
-		def = pref.ValueOfEnum(fd.Enum().Values().Get(0).Number())
+		//def = pref.ValueOfEnum(fd.Enum().Values().Get(0).Number())
+		def = pref.ValueOfEnum(0)
 	} else {
 		def = fd.Default()
 	}
